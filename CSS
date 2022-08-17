@@ -1,0 +1,101 @@
+1) There are three ways to add CSS to our HTML document :-
+  a) Inline CSS, it is used when less amount of styling is needed or we need to style only one specific element in the HTML document. It is given by the style attribute to a single element. It is deprecated.
+  b) External Style Sheet, it is used when the style is applied to almost every part of the HTML document. This is done by including the external style sheet in ou HTML document by the style tag under the head tag. It gives the facility to reuse the external style sheet.
+  c) Internal Style Sheet, it is used when a single HTML dicument has a unique style and several elements need to be styled to follow the format. Styles locally inside the HTML document using style tag under head tag.
+
+2) Types of CSS Selectors :-
+  a) Universal Selector :- By asterisk sign (*), when we need to apply a common style to all the elements of the HTML document.
+  b) Element Type Selector :- By targetting a specific tag, for say ul.
+  c) ID Selector :- It is applied by the hash sign (#). Every element must have a unique ID name, there can be no two elements having common ID names.
+  d) Class Selector :- It is appliede  by the dot sign (.). two elements can have same class name.
+  e) Descendent Combinator :- <div id = "container">
+                                 <div class = "box"></div>
+                                 <div class = "box-2"></div>
+                               </div>
+  Targetting box in the CSS can be done as :-
+  #container .box{
+    float : left;
+    padding-bottom : 15px;
+  }
+  f) Child Combinator :- <div id = "container">
+                                 <div class = "box"></div>
+                                 <div class = "box"></div>
+                          </div>
+  Targetting box in the CSS can be done as :-
+  #container> .box{
+    float : left;
+    padding-bottom : 15px;
+  } 
+  This targets all the children of the container ID.
+  f) General Sibling Combinator :- <h2>Title</h2>
+                                   <p>Parahraph Example.</p>
+  Targetting p in the CSS can be done as :-
+  h2 ~ p{
+    float : left;
+    padding-bottom : 15px;
+  }
+  g) Attribute Selector :- <input type = "text">
+  Targetting text in the CSS can be done as :-
+  input [type = "text"] {
+    background-color : #444;
+    width : 200px;
+  }
+  h) Group Selector :- h1, h4 {
+  color : blue;
+  }
+
+3) Sass, Lass and Stylus :- These are advanced level of CSS used in the industries.
+  a) SASS :- It is the acronym for "Syntactically Awesome Style Sheets" and is commonly preceeded by the dollar sign ($).
+  For example :-
+    $font-color : #fff;
+    $bg-color : #00f;
+    
+    #box 
+      color : $font-color;
+      background : $bg-color;
+      
+   b) LESS :- It is the acronym for "Learner Stylesheets", It used at the rate sign (@) to define the variables.
+   For example :-
+      @font-color : #fff;
+      @bg-color : #00f;
+    
+      #box {
+        color : @font-color;
+        background : @bg-color;
+      }
+        
+   c) Stylus :- It offers a great deal of flexibility in writing syntax. It doesn't uses any variables for defining variables.
+   For example :-
+      font-color : #fff;
+      bg-color : #00f;
+    
+      #box {
+        color : font-color;
+        background : bg-color; 
+      }
+      
+4) Box-Sizing Property :- It defines how the height and width of a box are calculated.
+    a) Content Box :- The default heifght and width apply only to the element's content. padding and border are added outside the box.
+    b) Padding Box :- The dimensions are added tp both element'scontent and padding. The border is added outside the box.
+    c) Border-Box :- The dimensions are added to the content, padding and the border.
+    
+5) Different ways To Hide and Element using CSS :-
+    a) display : none;
+        This hides the content and doesn't store it in the DOM.
+    b) visibility : hidden;
+        The element is added to the DOM and takes up space. However, it is not visible to the user, i.e., in the browser.
+    c) position : absolute;
+        The element can be made to appear outside the screen.
+        
+ 6) Important in CSS :-
+      The important keyword indicates the highest precedence, and it overrides the cascaded property.
+      For example:- <p id = "thing"> Will be BLUE!</p>
+      Applying important on p tag :-
+          p {
+            color : blue !important;
+          }
+          #thing {
+              color : green;
+          }
+  7) CSS Sprites :- Since each image sends out a HTTP request seperately, a web apge with a high number of photos takes longer to load. CSS Sprites are used to minimize the loading time of a webapge by combining multiple small pictures into a single image. It decreases the amount of HTTP requests and, as a result, the time it takes for pages toload.
+  
